@@ -1,11 +1,12 @@
 from flask import Flask, render_template, Response
-#from camera import Camera
+from camera import Camera
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
+    """Video streaming home page"""
     return render_template('index.html')
 
 def gen(camera):
