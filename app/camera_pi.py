@@ -52,5 +52,11 @@ class Camera(object):
                 stream.truncate()
 
 
+                #if there is no client requesting for frames in the past 10sec stop the thread
+                if time.time() - cls.last_access > 10:
+                    break
+        cls.thread = None
+
+
 
 
