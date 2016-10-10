@@ -1,6 +1,8 @@
 from flask import Flask, render_template, Response
 from camera import Camera
 
+
+#the rasberryPi camera module requires pi camera package so you import from camera _pi import Camera
 app = Flask(__name__)
 
 
@@ -21,4 +23,4 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0',debug=True,threaded=True)
